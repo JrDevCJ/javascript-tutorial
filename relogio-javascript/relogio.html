@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Slides de imagens com Swiper</title>
+
+		<!-- Link da fonte está na descrição -->
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" 
+		rel="stylesheet"> 
+	
+		<style type="text/css">
+			
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Roboto', sans-serif;
+			}
+
+			body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				flex-direction: column;
+				background: #eee;	
+			}			
+			
+			.clock{
+				background-color: rgb(46,46,46);
+				display: flex;
+				color: #fff;
+				border-radius: 5px;
+				padding: 5px;
+				font-size: 50px;
+			}
+
+			.clock > div{
+				border: solid 5px rgb(46,46,46);
+				background-color: #000;
+				text-align: center;
+				padding: 8px 15px;
+				border-radius: 10px;
+			}			
+
+			.flip{
+				animation: 0.5s linear flipping;
+			}
+
+			@keyframes flipping {
+				0% {
+					transform: rotateX(0deg);
+				}
+				50% {
+					transform: rotateX(90deg);
+				}
+				100% {
+					transform: rotateX(0deg);
+				}
+			}
+
+			.blink {
+				animation: blink-animation 1s steps(5, start) infinite;
+				-webkit-animation: blink-animation 1s steps(5, start) infinite;
+			}
+
+			@keyframes blink-animation {
+				to {
+					visibility: hidden;
+				}
+			}
+			
+		</style>
+	
+	</head>
+	<body>
+
+		<div class="clock">			
+			<div id="hora">23</div>
+			<div ><span class="blink">:</span></div>
+			<div id="minuto">59</div>	
+			<div ><span class="blink">:</span></div>
+			<div id="segundo">40</div>					
+		</div>
+		
+		<script>
+
+			const divHora = document.getElementById('hora');
+			const divMinuto = document.getElementById('minuto');
+			const divSegundo = document.getElementById('segundo');
+
+			setInterval(() => {
+
+				let segundos = parseInt(divSegundo.textContent) + 1;				
+				
+				if(segundos == 60){
+
+					segundos = 0;	
+					
+					let minutos = parseInt(divMinuto.textContent) + 1;
+
+					if(minutos == 60){
+
+						minutos = 0; 
+
+						let hora = parseInt(divHora.textContent) + 1;
+
+						if(hora == 24)
+							hora = 0;
+						
+						alterarValor(divHora, hora);	
+
+					}
+
+					alterarValor(divMinuto, minutos);	
+				} 
+			
+				alterarValor(divSegundo, segundos);
+				
+			}, 1000);			
+
+
+			function alterarValor(elemento, valor){
+
+				elemento.textContent  = padTo2Digits(valor); //Seta valor do elemento
+
+				elemento.classList.add('flip'); // Adiciona a class flip 				
+				setTimeout(function(){ elemento.classList.remove('flip') }, 500); // remove a class flip
+			}
+
+			// função usada para adicionar adicionar 0 a frente de números com apenas 1 casa decimal
+			function padTo2Digits(num) {
+				return num.toString().padStart(2, '0');
+			}			
+
+		</script>		
+		
+
+	</body>
+</html>
