@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link da fonte está na descrição -->
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Pomodoro App</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card-header">
+                <h1>Pomodoro Timer</h1>
+                <div class="card-header-buttons">
+
+                    <button id="buttonTypePomodoro"
+                            class="active" 
+                            onclick="setPomodoroType(TIMER_TYPE_POMODORO);">
+                            Pomodoro
+                    </button>
+
+                    <button id="buttonTypeShortBreak"
+                            onclick="setPomodoroType(TIMER_TYPE_SHORT_BREAK);">
+                        Short Break
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <div id="circularProgressBar" class="progress-bar">
+                    <div class="progress-bar-inner">
+                        <h2 class="progress-value">25:00</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <button class="btn-sucess" onclick="startTimer();">Start</button>
+                <button class="btn-danger" onclick="stopTimer();">Stop</button>
+                <button onclick="resetTimer();">Reset</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
