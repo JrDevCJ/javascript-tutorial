@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  text-decoration: none;
+}
+:root {
+  --blue: #1e94d2;
+  --green: rgb(35, 221, 122);
+  --red: #d72337;
+  --orange: #f59b37;
+}
+body * {
+  font-family: "Inter", sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: #e1dddd;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-buttons {
+  display: flex;
+  gap: 20px;
+}
+.button {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background-color: var(--blue);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.1s ease-in-out;
+}
+.button.success{
+  background-color: var(--green);
+}
+.button.warning{
+  background-color: var(--orange);
+}
+.button.danger{
+  background-color: var(--red);
+}
+.button:hover {
+  transform: scale(0.96);
+}
+.container-dialog {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.alert {
+  position: relative;
+  width: 400px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  top: 50%;
+  transform: translateY(-50%); 
+}
+.alert .icon {
+  margin-bottom: 12px;
+  font-size: 80px;
+  line-height: 82px;
+  color: var(--orange);
+}
+.alert .title {
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 26px;
+  letter-spacing: 0.125rem;
+  color: var(--orange);
+  text-transform: capitalize;
+}
+.container-dialog.success .title, 
+.container-dialog.success .icon{
+  color: var(--green);
+}
+.container-dialog.warning .title, 
+.container-dialog.warning .icon{
+  color: var(--orange);
+}
+.container-dialog.danger .title, 
+.container-dialog.danger .icon{
+  color: var(--red);
+}
+.alert .description {
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.025rem;
+  color: black;
+}
+.alert button ion-icon {
+  font-size: 24px;
+  --ionicon-stroke-width: 48px;
+}
