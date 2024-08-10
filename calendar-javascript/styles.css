@@ -1,0 +1,73 @@
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0a1930;
+  margin: 0;
+}
+#calendar {
+  width: 320px;
+  padding: 20px;
+  border: 1px solid #f46663;
+  background-color: #122541;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #122541;
+  color: #f46663;
+  font-weight: 900;
+  border-bottom: 1px solid #3a4669;
+  border-radius: 5px 5px 0 0;
+  text-transform: capitalize;
+}
+.header button {
+  background: none;
+  color: #ccc;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.header button:hover {
+  background-color: #444;
+  color: #fff;
+}
+.weekdays,
+#days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+  text-align: center;
+  color: #ccc;
+}
+.weekdays div {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+#days div {
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+#days div:hover {
+  background-color: #444;
+  color: #fff;
+  transform: scale(1.1);
+}
+#days div.active {
+  background-color: #f46663;
+  color: #fff;
+}

@@ -1,0 +1,76 @@
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  margin: 0;
+}
+
+#calendar {
+  width: 320px;
+  padding: 20px;
+  border: 2px solid #00ff99;
+  background-color: #000;
+  box-shadow: 0 0 15px #00ff99, 0 0 30px #00ff99, 0 0 45px #00ff99;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #000;
+  color: #00ff99;
+  border-bottom: 1px solid #00ff99;
+  box-shadow: 0 0 10px #00ff99;
+}
+
+.header button {
+  background: none;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+  transition: transform 0.2s;
+}
+
+.header button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00ff99, 0 0 25px #00ff99;
+}
+
+.weekdays,
+#days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+  text-align: center;
+  color: #00ff99;
+}
+
+.weekdays div {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99;
+}
+
+#days div {
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#days div:hover {
+  background-color: #00ff99;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99;
+}
