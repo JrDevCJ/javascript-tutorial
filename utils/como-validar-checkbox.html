@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Checkbox</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        #checkbox {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        #info {
+            display: flex;
+            color: black;
+        }
+
+        button {
+            padding: 0.8rem;
+            border: none;
+            background-color: #3e83c5 !important;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 0.125rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <label>
+            <input  type="checkbox" 
+                    id="checkbox">
+            Aceito os termos e condições
+        </label>
+        <button type="button" 
+                onclick="validarCheckbox();">
+            Validar
+        </button>
+        <p id="info"></p>
+    </div>
+
+    <script>
+
+        const checkbox = document.getElementById('checkbox');
+        const info = document.getElementById('info');
+
+        // Função para validar o estado do checkbox
+        function validarCheckbox() {
+            info.textContent = checkbox.checked
+                ? 'O checkbox está marcado.'
+                : 'O checkbox não está marcado.';
+            info.style.color = checkbox.checked ? 'green' : 'red';
+        }
+
+    </script>
+
+</body>
+
+</html>

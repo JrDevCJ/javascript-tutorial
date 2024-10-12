@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Export Table Data To Excel File</title>
+
+</head>
+
+<body>
+
+    <table id="tblData">
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>País</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>23</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Leila</td>
+                <td>35</td>
+                <td>Brasil</td>
+            </tr>
+            <tr>
+                <td>Paulo</td>
+                <td>30</td>
+                <td>China</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <button onclick="exportTableToExcel();">Export Table </button>
+
+
+    <script type="text/javascript">
+
+        const tableSelect = document.getElementById("tblData");
+
+        function exportTableToExcel() {
+            const dataType = 'application/vnd.ms-excel';
+            const filename = 'excel-data.xls';
+            const tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+            // Create download link element
+            const downloadLink = document.createElement("a");
+            document.body.appendChild(downloadLink);
+
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+
+        }
+    </script>
+</body>
+
+</html>
