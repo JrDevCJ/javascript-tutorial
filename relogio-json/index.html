@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch JSON Display</title>
+    <meta name="description"
+        content="Explore um display de relógio digital interativo com dados em tempo real em formato JSON. Visualize a data, hora, temperatura e nível da bateria instantaneamente.">
+    <meta name="keywords"
+        content="Relógio Digital, JSON, Display Interativo, Dados em Tempo Real, Hora, Data, Temperatura, Bateria">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="watch-container">
+        <div class="watch-screen">
+            <div class="header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="filename">clock.json</span>
+            </div>
+
+<pre class="json-display">
+<span class="curly-brace">{</span>
+    <span class="key">"now"</span>: <span class="curly-brace">{</span>
+        <span class="key">"date"</span>: <span class="string" id="display-date">"12-05-2025"</span>,
+        <span class="key">"time"</span>: <span class="string" id="display-time">"19:55:55"</span>,   
+    <span class="curly-brace">}</span>,
+    <span class="key">"temperature"</span>: <span class="number" id="display-temperature">"50ºC"</span>,
+    <span class="key">"battery"</span>: <span class="number" id="display-battery">56</span>,
+<span class="curly-brace">}</span>
+</pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4457303488648074"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #333;
+  margin: 0;
+  font-family: "Consolas", "Monaco", monospace;
+  overflow: hidden;
+}
+.watch-container {
+  width: 250px;
+  height: 250px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.watch-screen {
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 0.9em;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.header .red {
+  background-color: #ff605c;
+}
+.header .yellow {
+  background-color: #ffbd44;
+}
+.header .green {
+  background-color: #00ca4e;
+}
+.header .filename {
+  color: #e0e0e0;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.json-display {
+  white-space: pre-wrap; /* preserva whitespace e wrap text */
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  margin-left: 0.6rem;
+  color: #e0e0e0;
+}
+
+/* Cores para simular o destaque de sintaxe JSON */
+.key {
+  color: #e06c75;
+  color: #f7b233;
+}
+.string {
+  color: #98c379;
+}
+.number {
+  color: #9c71c4;
+}
+.curly-brace {
+  color: #abb2bf;
+}
+/* Animação dos dots */
+@keyframes bouncePulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-2px) scale(1.05);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-1px) scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: bouncePulse 2.5s infinite ease-in-out;
+}
+
+.red {
+  background-color: #ff5f56;
+  animation-delay: 0s;
+}
+.yellow {
+  background-color: #ffbd2e;
+  animation-delay: 0.6s;
+}
+.green {
+  background-color: #27c93f;
+  animation-delay: 1.2s;
+}
